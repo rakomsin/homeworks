@@ -1,0 +1,3 @@
+AllCops:
+  Excludes:
+    - HW_03/Maksim_Holubeu/*.rb
