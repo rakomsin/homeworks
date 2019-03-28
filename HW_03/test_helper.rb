@@ -23,8 +23,8 @@ class HW3Runner
       decipher.iv = VECTOR
 
       decription_result = Struct.new(:encrypted_test_path, :decrypted_test_path, :decrypted_test_data)
-      encrypted_test_path = File.join('.', File.dirname(__FILE__), "encrypted_test_hw_03_#{task_number}.rb")
-      decrypted_test_path = File.join('.', File.dirname(__FILE__), "decrypted_test_hw_03_#{task_number}.rb")
+      encrypted_test_path = File.join('.', File.dirname(__FILE__), "/encrypted/encrypted_test_hw_03_#{task_number}.rb")
+      decrypted_test_path = File.join('.', File.dirname(__FILE__), "/encrypted/decrypted_test_hw_03_#{task_number}.rb")
 
       decription_result.new(
         encrypted_test_path,
@@ -40,7 +40,7 @@ class HW3Runner
       decipher.iv = VECTOR
       test_file = File.join('.', File.dirname(__FILE__), "hw#{task_number}_test.rb")
       encrypted_data = cipher.update(File.read(test_file)) + cipher.final
-      encrypted_file_path = File.join('.', File.dirname(__FILE__), "encrypted_test_hw_03_#{task_number}.rb")
+      encrypted_file_path = File.join('.', File.dirname(__FILE__), "/encrypted/encrypted_test_hw_03_#{task_number}.rb")
       IO.write(encrypted_file_path, encrypted_data)
     end
 
