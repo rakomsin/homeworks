@@ -3,7 +3,7 @@
 - use `Ruby >= 2.6.0`
 - please create fork from the https://github.com/labs-ruby/homeworks (should be
   already done)
-- then create a new branch (for example `my_hw_03`)
+- then create a new branch `my_hw_03` (!)
 - and go to the directory to `HW_03`
 - create a folder with your name `Name_Surname`
 - inside the folder create a file .rb for every task, for example `name_surname_hw_03_t_01.rb` 
