@@ -10,6 +10,7 @@ class HW3Runner
       tasks_range.each do |task_number|
         decription_result = decrypt(task_number)
         IO.write(decription_result.decrypted_test_path, decription_result.decrypted_test_data)
+        next unless path_for_task(task_number)
         require path_for_task(task_number)
         require decription_result.decrypted_test_path
         File.delete(decription_result.decrypted_test_path)
@@ -51,7 +52,8 @@ class HW3Runner
 
     def path_for_task(number)
       regexp = Regexp.new("hw_03_t_0#{number}")
-      Dir[File.join('.', '**/*.rb')].select { |f| f.match?(regexp) }.last
+      exclude_maks_regexp = Regexp.new("maksim_holubeu")
+      Dir[File.join('.', '**/*.rb')].select { |f| f.match?(regexp) && !f.match?(exclude_maks_regexp) }.last
     end
 
     def decipher
