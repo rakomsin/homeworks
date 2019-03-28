@@ -18,17 +18,19 @@ decipher.decrypt
 decipher.key = key
 decipher.iv = iv
 
-decrypted_test_data = decipher.update(File.read("encrypted_test_hw_1.rb")) + decipher.final
-IO.write("decrypted_test.rb", decrypted_test_data)
+encrypted_file_path = File.join(".", File.dirname(__FILE__), "encrypted_test_hw_1.rb")
+decrypted_file_path = File.join(".", File.dirname(__FILE__), "decrypted_test_hw_1.rb")
+decrypted_test_data = decipher.update(File.read(encrypted_file_path)) + decipher.final
+IO.write(decrypted_file_path, decrypted_test_data)
 
 
 homeworks = Dir[File.join(".", "**/*.rb")].select { |f| f.match?(/hw_03_t_01/)}
 
 homeworks.each do |hw|
   puts "Running tests for #{hw}..."
-  require_relative hw
-  require_relative "decrypted_test"
+  require hw
+  require decrypted_file_path
 end
 
-File.delete("decrypted_test.rb")
+File.delete(decrypted_file_path)
 
