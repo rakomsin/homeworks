@@ -13,3 +13,6 @@ before_install:
 
 script:
   - rubocop
+  - if [ $TRAVIS_BRANCH == "my_hw_03" ]; then
+      ruby HW_03/test_helper.rb
+    fi
