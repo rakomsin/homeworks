@@ -7,8 +7,6 @@ class HW3Runner
 
   class << self
     def call
-
-
       tasks_range.each do |task_number|
         decription_result = decrypt(task_number)
         IO.write(decription_result.decrypted_test_path, decription_result.decrypted_test_data)
