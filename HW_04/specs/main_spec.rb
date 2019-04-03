@@ -2,6 +2,17 @@
 require "minitest/autorun"
 require 'timeout'
 
+# sorry for that -_-
+begin
+  if respond_to?(:task_4_1) && respond_to?(:task_4_2) && respond_to?(:task_4_3) && respond_to?(:task_4_4)
+    loaded = true
+  else
+    loaded = false
+  end
+end
+
+# btw, what are you looking here, huh?
+
 loaded = true
 
 if loaded
