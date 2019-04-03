@@ -1,3 +1,4 @@
+# rubocop:disable all
 require "minitest/autorun"
 require 'timeout'
 
@@ -129,3 +130,4 @@ if loaded
     end
   end
 end
+# rubocop:enable all
