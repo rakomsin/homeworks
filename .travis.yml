@@ -10,4 +10,5 @@ before_install:
 script:
   - rubocop
   - ruby HW_03/test_helper.rb
+  - ruby HW_04/test_helper.rb
 
