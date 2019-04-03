@@ -13,10 +13,8 @@ end
 
 # btw, what are you looking here, huh?
 
-loaded = true
-
 if loaded
-  class TestHW2 < Minitest::Test
+  class TestHW4 < Minitest::Test
     def test_true
       assert_equal true, true
     end
